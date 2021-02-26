@@ -1,0 +1,35 @@
+user: "[emailadress@gmail.com"
+server: "https://abc.atlassian.net"
+apikey: "*******************"
+
+#must be an empty array if issuesof all projects in server required
+projects: []
+
+#subset of fields to be selected 
+#must be an empty array if not required
+fields: []
+
+#valid jql(project parameter not to be passed)
+#must be empty if not required
+jql: ''
+
+#existing filters(integer) - pass any of existing shared filter
+#filter: 123334 #works only with output_option= 1
+#must be 0 if jql is passed or if filter is not required
+filter : 10002
+
+#when set to True, will update mappings.yaml with all the field id and name pairs in the server
+update_field_mappings: True
+
+#field object values matching to the given pattern will not be written to the output file
+exclude_field_val:  ['self','avatarurls','url']
+
+#files can be created in 3 diferent ways
+#1: all project issues in 1 excel sheet of a file, op_filename needed
+#2: each project as sepearate excel file
+#3: each project as sepearte sheets of an excel file, op_filename needed
+output_option: 1
+
+#required for output option 1,3. 
+#timestamp appneded to filename
+op_filename: 'jira_issues'
